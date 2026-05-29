@@ -188,12 +188,12 @@ const getClaimDeadline = (fyQuarter) => CLAIM_DEADLINES[fyQuarter]||null;
 
 // --- WORKFLOW STEPS ----------------------------------------------------------
 const WORKFLOW_STEPS = [
-  {id:"request_submitted",  label:"Submitted",          desc:"Your request has been received and is under review"},
-  {id:"approved",           label:"Approved",           desc:"Activities approved - Business Plan being prepared"},
-  {id:"sent_for_signature", label:"Sent for Signature", desc:"Business Plan sent - please sign and return"},
-  {id:"signed",             label:"Signed",             desc:"Document signed by both parties - PO being raised"},
-  {id:"po_raised",          label:"PO Raised",          desc:"PO confirmed - you can now execute and claim"},
-  {id:"rejected",           label:"Rejected",           desc:"Request was not approved - contact your partner manager"},
+  {id:"request_submitted",  label:"Submitted",           desc:"Your request has been received and is under review"},
+  {id:"approved",           label:"In Review",           desc:"Your request is being processed — Business Plan being prepared"},
+  {id:"sent_for_signature", label:"Awaiting Signature",  desc:"Business Plan sent — please sign and return"},
+  {id:"signed",             label:"Signed",              desc:"Document signed — PO being raised"},
+  {id:"po_raised",          label:"✓ Approved",          desc:"PO confirmed — you can now execute and submit your claim"},
+  {id:"rejected",           label:"Not Approved",        desc:"Request was not approved - contact your partner manager"},
 ];
 const MAIN_STEPS = WORKFLOW_STEPS.filter(s=>s.id!=="rejected");
 
