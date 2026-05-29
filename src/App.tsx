@@ -44,7 +44,7 @@ const _dbToReq = function(r, items) {
         localCurrency: it.local_currency || "EUR",
         itemStatus: it.item_status || "request_submitted",
         assignedTo: it.assigned_to || "",
-        allocadiaId: it.allocadia_id || "",campaignId: it.campaign_id || "",
+        allocadiaId: it.allocadia_id || "",
         cancelReason: it.cancel_reason || null,
         postponedTo: it.postponed_to || null,
         acknowledged: it.acknowledged || false,
@@ -284,14 +284,16 @@ const STATUS_COLOR = {
 };
 const STATUS_LABEL = {
   request_submitted: "Submitted",
-  sent_for_signature: "Sent for Signature",
+  sent_for_signature: "Awaiting Signature",
   approved_and_signed: "Approved",
-  rejected: "Rejected",
+  rejected: "Not Approved",
   submitted: "Submitted",
   marketing_review: "In Review",
-  finance_review: "Finance Review",
-  approved: "Approved",
+  finance_review: "In Review",
+  approved: "✓ Approved",
   paid: "Paid",
+  on_hold: "On Hold",
+  cancelled: "Cancelled",
 };
 const StatusPill = ({status}) => {
   const col = STATUS_COLOR[status]||C.muted;
@@ -825,12 +827,12 @@ const RequestDetailModal = ({request, onClose, onClaim, onUpdate, claimedItemIds
     postponed: "#f59e0b",
   };
   const STATUS_LABEL_MAP = {
-    request_submitted: "Submitted",
-    approved: "Approved",
-    sent_for_signature: "Sent for Signature",
-    signed: "Signed",
-    po_raised: "PO Raised",
-    rejected: "Rejected",
+    request_submitted: "Submitted — Under Review",
+    approved: "In Review",
+    sent_for_signature: "Awaiting Signature",
+    signed: "Signed — Awaiting PO",
+    po_raised: "✓ Approved",
+    rejected: "Not Approved",
     cancelled_by_partner: "Cancelled",
     postponed: "Postponed",
   };
