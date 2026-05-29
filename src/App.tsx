@@ -44,7 +44,7 @@ const _dbToReq = function(r, items) {
         localCurrency: it.local_currency || "EUR",
         itemStatus: it.item_status || "request_submitted",
         assignedTo: it.assigned_to || "",
-        allocadiaId: it.allocadia_id || "",
+        allocadiaId: it.allocadia_id || "",campaignId: it.campaign_id || "",
         cancelReason: it.cancel_reason || null,
         postponedTo: it.postponed_to || null,
         acknowledged: it.acknowledged || false,
