@@ -818,10 +818,10 @@ const RequestDetailModal = ({request, onClose, onClaim, onUpdate, claimedItemIds
 
   const STATUS_COLOR_MAP = {
     request_submitted: "#f59e0b",
-    approved: "#10b981",
+    approved: "#f59e0b",
     sent_for_signature: "#8b5cf6",
     signed: "#06b6d4",
-    po_raised: "#3b82f6",
+    po_raised: "#10b981",
     rejected: "#ef4444",
     cancelled_by_partner: "#ef4444",
     postponed: "#f59e0b",
@@ -1541,7 +1541,6 @@ export default function App() {
                 <div key={req.id} style={{marginBottom:16,paddingBottom:16,borderBottom:`1px solid ${C.border}20`}}>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
                     <span style={{fontFamily:"monospace",fontSize:12,color:C.accent}}>{req.id}</span>
-                    <StatusPill status={req.status}/>
                   </div>
                   <StatusTimeline status={req.status} compact={false}/>
                 </div>
